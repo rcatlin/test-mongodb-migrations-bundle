@@ -4,8 +4,111 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "406cbdf1d6e3854f72f110eccc73d656",
+    "hash": "870845cea5ff32eba6d144bf967f10c1",
     "packages": [
+        {
+            "name": "antimattr/mongodb-migrations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antimattr/mongodb-migrations.git",
+                "reference": "4694852ce5c5bfd94aa5ba2761200e9f7fef4ab0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antimattr/mongodb-migrations/zipball/4694852ce5c5bfd94aa5ba2761200e9f7fef4ab0",
+                "reference": "4694852ce5c5bfd94aa5ba2761200e9f7fef4ab0",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/mongodb": "1.*",
+                "php": ">=5.3.2",
+                "symfony/console": "2.*",
+                "symfony/yaml": "2.*"
+            },
+            "require-dev": {
+                "antimattr/test-case": "dev-master#54ba5c764cb340942b4dd279f3866c0317e13158",
+                "fabpot/php-cs-fixer": "0.5.*@dev",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "AntiMattr\\MongoDB\\Migrations\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Fitzgerald",
+                    "email": "matthewfitz@gmail.com"
+                },
+                {
+                    "name": "Ryan Catlin",
+                    "email": "ryan.catlin@gmail.com"
+                }
+            ],
+            "description": "Managed Database Migrations for MongoDB",
+            "homepage": "http://github.com/antimattr/mongodb-migrations",
+            "keywords": [
+                "database",
+                "doctrine",
+                "migration",
+                "mongodb"
+            ],
+            "time": "2014-09-10 20:35:19"
+        },
+        {
+            "name": "antimattr/mongodb-migrations-bundle",
+            "version": "dev-master",
+            "target-dir": "AntiMattr/Bundle/MongoDBMigrationsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antimattr/mongodb-migrations-bundle.git",
+                "reference": "c6d3bd3b08fdfffff602566a578b143684d25459"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antimattr/mongodb-migrations-bundle/zipball/c6d3bd3b08fdfffff602566a578b143684d25459",
+                "reference": "c6d3bd3b08fdfffff602566a578b143684d25459",
+                "shasum": ""
+            },
+            "require": {
+                "antimattr/mongodb-migrations": "dev-master",
+                "doctrine/mongodb-odm": "1.*",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "AntiMattr\\Bundle\\MongoDBMigrationsBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Fitzgerald",
+                    "email": "matthewfitz@gmail.com"
+                }
+            ],
+            "description": "Symfony MongoDBMigrationsBundle",
+            "homepage": "http://github.com/antimattr/mongodb-migrations-bundle",
+            "keywords": [
+                "database",
+                "doctrine",
+                "migration",
+                "mongodb",
+                "symfony"
+            ],
+            "time": "2014-09-10 20:56:47"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.0",
@@ -1826,7 +1929,9 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "doctrine/mongodb-odm": 20,
-        "doctrine/mongodb-odm-bundle": 20
+        "doctrine/mongodb-odm-bundle": 20,
+        "antimattr/mongodb-migrations": 20,
+        "antimattr/mongodb-migrations-bundle": 20
     },
     "prefer-stable": false,
     "platform": {
