@@ -81,7 +81,7 @@ doctrine_mongodb:
 mongo_db_migrations:
     collection_name: "migration_versions"
     database_name: %mongodb_default_database%
-    dir_name: "%kernel.root_dir%/../src/MongoDBMigrations/Bundle/MainBundle/Migrations/MongoDB"
+    dir_name: "%kernel.root_dir%/../src/TestMigrations/Bundle/MainBundle/Migrations/MongoDB"
     script_dir_name: "%kernel.root_dir%/scripts"
     name: "Test MongoDB Migrations Bundle Migrations"
-    namespace: "MongoDBMigrations/Bundle/MainBundle/Migrations/MongoDB"
+    namespace: "TestMigrations/Bundle/MainBundle/Migrations/MongoDB"
