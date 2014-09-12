@@ -84,4 +84,4 @@ mongo_db_migrations:
     dir_name: "%kernel.root_dir%/../src/TestMigrations/Bundle/MainBundle/Migrations/MongoDB"
     script_dir_name: "%kernel.root_dir%/scripts"
     name: "Test MongoDB Migrations Bundle Migrations"
-    namespace: "TestMigrations/Bundle/MainBundle/Migrations/MongoDB"
+    namespace: "TestMigrations\Bundle\MainBundle\Migrations\MongoDB"
