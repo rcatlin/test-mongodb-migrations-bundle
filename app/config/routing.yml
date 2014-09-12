@@ -1,0 +1,5 @@
+test_migrations_main:
+    resource: "@TestMigrationsMainBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
