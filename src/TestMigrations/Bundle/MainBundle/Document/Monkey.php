@@ -25,6 +25,12 @@ class Monkey
      * @ODM\ReferenceMany(targetDocument="TestMigrations\Bundle\MainBundle\Document\Hobby")
      */
     protected $hobbies;
+
+    /**
+     * @ODM\Boolean
+     */
+    protected $isHappy;
+
     public function __construct()
     {
         $this->hobbies = new ArrayCollection();
@@ -90,5 +96,27 @@ class Monkey
     public function getHobbies()
     {
         return $this->hobbies;
+    }
+
+    /**
+     * Set isHappy
+     *
+     * @param boolean $isHappy
+     * @return self
+     */
+    public function setIsHappy($isHappy)
+    {
+        $this->isHappy = $isHappy;
+        return $this;
+    }
+
+    /**
+     * Get isHappy
+     *
+     * @return boolean $isHappy
+     */
+    public function getIsHappy()
+    {
+        return $this->isHappy;
     }
 }

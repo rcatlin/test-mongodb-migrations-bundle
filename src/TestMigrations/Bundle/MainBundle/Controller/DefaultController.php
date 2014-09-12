@@ -40,12 +40,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("monkey/{name}")
+     * @Route("/monkey/{name}")
      */
     public function findMonkeyAction($name)
     {
-        $monkey = $this->getDocumentManager()
-            ->createQueryBuilder('TestMigrations\Bundle\MainBundle\Document\Monkey')
+        $monkey = $this->createMonkeyQueryBuilder()
             ->field('name')->equals($name)
             ->getQuery()
             ->getSingleResult()
@@ -65,6 +64,38 @@ class DefaultController extends Controller
         }
         
         return new Response($message);
+    }
+
+    /**
+     * @Route("/happy-monkeys")
+     */
+    public function happyMonkeysAction()
+    {
+        $monkeys = $this->createMonkeyQueryBuilder()
+            ->field('isHappy')->equals(true)
+            ->getQuery()
+            ->execute()
+            ->toArray()
+        ;
+
+        $names = array_map(function ($monkey) {
+            return $monkey->getName();
+        }, $monkeys);
+
+        if (empty($names)) { 
+            return new Response('No monkeys are happy!  :(');
+        }
+
+        return new Response(
+            implode(', ', $names)
+        );
+    }
+
+    protected function createMonkeyQueryBuilder()
+    {
+        return $this->getDocumentManager()
+            ->createQueryBuilder('TestMigrations\Bundle\MainBundle\Document\Monkey')
+        ;
     }
 
     protected function getDocumentManager()
